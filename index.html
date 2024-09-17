@@ -25,19 +25,18 @@ layout: default
           <u>Happenings of the last few months</u>
           <span style="display: block; margin-bottom: 1em"></span>
           <div class="news">
-              {% capture now %}{{'now' | date: '%s' | minus: 7776000 %}}{% endcapture %}
-              <ul style="list-style-position:outside;padding:20px" >
-                {% for new in site.data.news %}
-                  {% capture date %}{{new.date | date: '%s' | plus: 0 %}}{% endcapture %}
-                  {% if date > now %}
-                    <li>
-                      <span>
-                        {{ new.details }}
-                      </span>
-                    </li>
-                  {% endif %}
-                {% endfor %}
-              </ul>
+            {% assign now = 'now' | date: '%s' | plus: 0 %}  <!-- Ensure 'now' is a number -->
+            {% assign threshold = now | minus: 15552000 %}   <!-- Subtract 180 days (in seconds) -->
+            <ul style="list-style-position:outside;padding:20px">
+              {% for new in site.data.news %}
+                {% assign date = new.date | date: '%s' | plus: 0 %}  <!-- Ensure 'date' is a number -->
+                {% if date > threshold %}
+                  <li>
+                    <span>{{ new.details }}</span>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
           </div>
         </div >
       </div>
