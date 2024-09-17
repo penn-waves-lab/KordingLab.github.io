@@ -9,8 +9,8 @@ description:        "The Kording Lab is a computational neuroscience and causali
 
 
 # URL
-url:                http://kordinglab.com
-baseurl:            
+url:                https://penn-waves-lab.github.io
+baseurl:
 #baseurl:            "" #For Root Domain
 permalink:          /:year/:month/:day/:title.html
 
@@ -23,7 +23,7 @@ highlighter:        rouge
 # Navigation
 nav:
   - name:           "home"
-    href:           "/"
+    href:           ""
   - name:           "about"
     href:           "/about"
   - name:           "publications"
@@ -31,9 +31,9 @@ nav:
   - name:           "people"
     href:           "/people"
   # - name:           "blog"
-    # href:           "/blog"
-#   - name:           "abstracts"
-#     href:           "/abstracts"
+  #   href:           "/blog"
+  # - name:           "abstracts"
+  #   href:           "/abstracts"
   - name:           "lab teachings"
     href:           "/presentations"
 
